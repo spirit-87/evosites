@@ -1,0 +1,287 @@
+/* total styles*/
+
+@font-face {
+    font-family: OpenSansCond;
+    src: url(../assets/fonts/OpenSansCond.woff);
+}
+@font-face {
+    font-family: PtSans;
+    src: url(../assets/fonts/ptsans.woff);
+}
+:root {
+    --color-dark-gray: #777777;
+    --color-light-gray: #dcdcdc;
+    --color-text-gray: #767676;
+    --bg-footer: #000;
+    --wrapper-padding-hor: 200px;
+    --wrapper-padding-vert: 50px;
+}
+body {
+    font-family: OpenSansCond;
+    color: var(--color-text-gray);
+}
+.header, .main {
+    display: flex;
+    width: 100%;
+    padding: var(--wrapper-padding-vert) var(--wrapper-padding-hor);
+}
+.gallery{
+    padding: 0 var(--wrapper-padding-hor);
+    background-color: var(--color-light-gray);
+    height: 200px;
+}
+.slider {
+    height: 200px;
+}
+/* position styles 7f7f7f - подложка*/
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex: 1 0 auto;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex {
+    display: flex;
+}
+
+.fl-jc-sp-between {
+    justify-content: space-between;
+}
+.fl-jc-center{
+    justify-content: center;
+}
+.nav  {
+    justify-content: center;
+}
+/* block-model styles*/
+.button {
+    width: 100px;
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: var(--color-dark-gray);
+    color:white;
+    font-family: PtSans;
+    margin: 10px auto;
+}
+.hystmodal__window {
+    width: 300px;
+}
+
+.form__item input {
+    height: 30px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
+.logo_text {
+    padding:5px 10px;
+}
+.nav {
+    padding: 30px 225px;
+}
+.logo_link {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-dark-gray);
+}
+/* typography styles*/
+.form__item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top:10px;
+}
+.form__item label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.form__caption {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: PtSans;
+    text-align: center;
+}
+.small-text {
+    font-size: 14px;
+}
+.bold {
+    font-weight: bold;
+}
+.header {
+    color: var(--color-text-gray);
+    font-family: PtSans;
+}
+.logo_text {
+    font-size: 28px;
+}
+.logo_phone {
+    font: 28px/1.5 OpenSansCond; 
+    color: var(--color-text-gray);
+}
+.phone-number {
+    font-size: 36px;
+    font-family: OpenSansCond;
+}
+.phone-text a{
+    color: var(--color-text-gray);
+    font-size: 24px;
+    text-decoration:underline;
+    text-decoration-style: dashed;
+}
+.phone{
+    text-align: right;
+}
+.menu__item , .menu__item a {
+    font-family: PtSans;
+    font-size: 30px;
+    color: white;
+}
+
+.menu li + li::before {
+    content: "|";
+    margin: 0 10px;
+}
+
+.menu__item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* visual styles*/
+.header {
+    background-color: var(--color-light-gray);
+}
+.nav {
+    background-color: var(--color-dark-gray); 
+}
+.form__item input, .form__item textarea, .form {
+    box-shadow: inset 0 0 0 100px #fff;
+    border: 1px solid #DDE0E6;
+    padding: 5px 10px;
+}
+.hystmodal__close {
+    background-color: var(--color-dark-gray);
+    color:white;
+    background-size: 70% 70%;
+}
+.form {
+    padding: 20px 25px;
+}
+.form__item input.valid {
+    box-shadow: inset 0px 0px 5px red;
+}
+.valid {
+    font-style: italic;
+    font-size: 10px;
+    color:red;
+}
+.red, .green, .yellow {
+    height: 200px;
+    font-size: 20px;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color:yellow;
+}
+.green {
+    background-color: green;
+}
+.sidebar_menu li:first-child {
+    padding-top: 0;
+}
+.sidebar_menu li {
+    font-family: PtSans;
+    padding: 5px 0;
+}
+.submenu {
+    font-size: 10px;
+    padding-left: 25px;
+    list-style-type: disc;
+}
+.catalog {
+    padding-left: 30px;
+}
+.card {
+    padding: 15px;
+    background-color: var(--color-light-gray);
+    align-items: center;
+    font-family: PtSans;
+    font-size: 14px;
+}
+.card_description {
+    margin: 20px 0;
+}
+.card_price {
+    width: 100%;
+    margin-top: 30px;
+}
+.price {
+    color:#000;
+    line-height: 30px;
+}
+.basket {
+    width: 30px;
+}
+
+
+@media (max-width: 1300px) {
+    .menu__item , .menu__item a {
+        font-size: 20px;
+    }
+    .phone-number {
+        font-size: 26px;
+    }
+    .header, .main, .gallery, .nav {
+        padding-right: 50px;
+        padding-left: 50px;
+    }   
+}
+@media (max-width: 800px) {
+    .menu__item , .menu__item a {
+        font-size: 16px;
+    }
+    .logo_text {
+        font-size: 16px;
+    }
+    .phone-number {
+        font-size: 16px;
+    }
+    .phone-text a{
+        font-size: 12px;
+    }
+    .header, .main, .gallery, .nav {
+        padding-right: 20px;
+        padding-left: 20px;
+    }    
+    .card_description {
+        margin: 10px 0;
+    }
+    .card_price {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .menu__item , .menu__item a {
+        font-size: 12px;
+    }
+    .logo_text {
+        font-size: 14px;
+    }
+    .phone-number {
+        font-size: 12px;
+    }
+    .phone-text {
+        font-size: 12px;
+    }
+    .header, .main, .gallery, .nav {
+        padding-bottom: 20px;
+    }    
+}

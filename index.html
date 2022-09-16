@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое задание Шевкуновой на позицию Frontend-разработчика</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/hystmodal.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/itc-slider.css">
+</head>
+<body class="flex-column">
+    <div class="container flex-column">
+        <header class="header fl-jc-sp-between">
+            <div class="logo flex">
+                <div class="logo_img">
+                    <a href="#" class="logo_link"></a>
+                </div>
+                <div class="logo_text flex-column fl-jc-sp-between">
+                    <p class="bold">Название<br/>компании</p>
+                    <p class="small-text">самая клевая компания</p>
+                </div>
+            </div>
+            <div class="phone flex">
+                <div class="phone_text flex-column fl-jc-sp-between">
+                    <p class="phone-number">
+                        +7(499) 777-77-77<br/>
+                        +7(499) 777-77-77
+                    </p>
+                     <p class="phone-text bold"><a href="#" data-hystmodal="#myModal">Обратная связь</a></p>
+              </div>
+            </div>
+        </header>
+        <nav class="nav">
+            <ul class="menu flex fl-jc-center">
+                <li class="menu__item"><a class href="Home">Главная</a></li>
+                <li class="menu__item"><a class href="Catalog">Каталог</a></li>
+                <li class="menu__item"><a class href="Delivery">Доставка и оплата</a></li>
+                <li class="menu__item"><a class href="Price-list">Прайс-лист</a></li>
+                <li class="menu__item"><a class href="Contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <section class="gallery">
+            <div class="slider" data-slider="itc-slider">
+                <div class="slider__wrapper">
+                  <div class="slider__items">
+                    <div class="slider__item red">
+                        1
+                    </div>
+                    <div class="slider__item green">
+                        2
+                    </div>
+                    <div class="slider__item yellow">
+                        3
+                    </div>
+                  </div>
+                </div>
+                <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+                <button class="slider__control" data-slide="prev"></button>
+                <button class="slider__control" data-slide="next"></button>
+              </div>
+        </section>
+        <main class="main">  
+            <section class="sidebar">
+                <ul class="sidebar_menu">
+                    <li>Автомобили</li>
+                    <li>Бытовая техника</li>
+                        <ul class="submenu">
+                            <li>Микроволновки</li>
+                            <li>Холодильники</li>
+                            <li>Посудомоечные машины</li>
+                            <li>Чайники</li>
+                        </ul>
+                    <li>Мобильная техника</li>
+                    <li>Компьютеры</li>
+                    <li>Одежда</li>
+                    <li>Недвижимость</li>
+                </ul>
+            </section>
+            <section class="catalog">
+                <div class="card flex-column">
+                    <div class="card_img"><img src="assets/images/card_img.png"/></div>
+                    <div class="card_description">Самый клевый чайник,<br/>который надо купить</div>
+                    <div class="card_price flex fl-jc-sp-between">
+                        <span class="price bold flex-column fl-jc-sp-between">1 900 р.</span>
+                        <img src="assets/images/basket.png" class="basket"/>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                <button data-hystclose class="hystmodal__close">Закрыть</button>
+                <form action="#" method="POST" class="form">
+                    <h2 class="form__caption">Обратная связь</h2>
+                    <div class="form__item">
+                        <label for="username">Ваше имя *</label>
+                        <input id="username" type="text" name="username"/>
+                    </div>
+                    <div class="form__item">
+                        <label for="phone">Телефон *</label>
+                        <input id="phone" type="tel" name="phone"/>
+                    <div class="form__item">
+                        <label for="email">Email *</label>
+                        <input id="email" type="email" name="email" class="valid" placeholder="Поле обязательно для заполнения"/>
+                    </div>
+                    <div class="form__item">
+                        <label for="message">Сообщение *</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button class="button">Отправить</button>
+               </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/itc-slider.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            new ItcSlider('.slider');
+        });
+    </script>
+
+    <script src="js/hystmodal.min.js"></script>
+    <script type="text/javascript">
+        const myModal = new HystModal({
+                linkAttributeName: 'data-hystmodal',
+                catchFocus: true,
+                waitTransitions: true,
+                closeOnEsc: false,
+                beforeOpen: function(modal){
+                    console.log('Message before opening the modal');
+                    console.log(modal); //modal window object
+                },
+                afterClose: function(modal){
+                    console.log('Message after modal has closed');
+                    console.log(modal); //modal window object
+                },
+            });
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
